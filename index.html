@@ -5,51 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet" />
+    <title>Bistro Babushka</title>
   </head>
   <body>
-    <main class="grid">
-      <template>
-        <article>
-          <img src="" alt="" class="billedurl" />
-          <img src="" alt="" class="billede" />
+    <header>
+      <nav>
+        <button data-kategori="alle" class="valgt">Alle</button>
+        <button data-kategori="forretter">forretter</button>
+        <button data-kategori="hovedretter">hovedretter</button>
+        <button data-kategori="sideorders">sideorders</button>
+        <button data-kategori="desserter">desserter</button>
+        <button data-kategori="drikkevarer">drikkevarer</button>
+      </nav>
+      <div class="grid_1">
+        <h1>Bistro Babushka</h1>
+      </div>
+      <h1 class="viskategorier">Alle</h1>
+    </header>
+
+    <main></main>
+    <template>
+      <article class="artikel">
+        <img src="" alt="" class="billedurl" />
+        <div class="text">
           <h2 class="titel"></h2>
           <p class="beskrivelse"></p>
-          <p>Pris: <span class="pris"></span>:-</p>
-        </article>
-      </template>
-    </main>
+          <p class="pris"></p>
+        </div>
+      </article>
+    </template>
 
-    <script>
-      const url = "https://babushka-dd8a.restdb.io/rest/menu";
-      const options = {
-        headers: {
-          "x-apikey": "600ec2fb1346a1524ff12de4",
-        },
-      };
+    <div id="popup">
+      <article class="artikel">
+        <img class="stort_billede" src="" alt="" />
+        <h2></h2>
+        <p id="langbeskrivelse"></p>
+        <p id="pris"></p>
+      </article>
+    </div>
 
-      async function hentData() {
-        const resspons = await fetch(url, options);
-        const json = await resspons.json();
-        vis(json);
-      }
-
-      const main = document.querySelector("main");
-      const template = document.querySelector("template").content;
-
-      function vis(json) {
-        console.log(json);
-        json.forEach((mad) => {
-          const klon = template.cloneNode(true);
-          klon.querySelector(".billedurl").src = "medium/" + mad.billede;
-          klon.querySelector(".titel").textContent = mad.navn;
-          klon.querySelector(".beskrivelse").textContent = mad.kortbeskrivelse;
-          klon.querySelector(".pris").textContent = mad.pris;
-          main.appendChild(klon);
-        });
-      }
-
-      hentData();
-    </script>
+    <script src="script.js"></script>
   </body>
+  <footer>©Madelene Andersson</footer>
 </html>

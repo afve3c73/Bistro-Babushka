@@ -1,20 +1,150 @@
-article {
-  border: 1px solid black;
-  padding-left: 5px;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-
-img {
-  width: 100%;
-}
-.grid {
+main {
   display: grid;
   gap: 15px;
-  margin: 15px;
+  padding: 10px 60px;
+  background-color: #524535;
 }
+
+.grid_1 {
+  background-image: url("wine.webp");
+  padding-bottom: 4%;
+  background-size: cover;
+}
+
+nav {
+  display: flex;
+  gap: 19px;
+  flex-wrap: wrap;
+  justify-content: right;
+  background-color: #947660;
+  padding: 5px 20px 5px 0px;
+}
+
+nav :hover {
+  color: #635441;
+}
+
+button {
+  font-size: 15px;
+  border: 0;
+  background-color: transparent;
+  color: #201d19;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bolder;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 500%;
+  color: rgb(190, 164, 117);
+  text-transform: uppercase;
+  padding-left: 3%;
+  padding-top: 16%;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 22px;
+  padding-bottom: 17px;
+  letter-spacing: 1px;
+}
+
+p {
+  font-family: "Merriweather", serif;
+  font-size: 13px;
+  line-height: 1.6;
+  letter-spacing: 1px;
+}
+
+.viskategorier {
+  letter-spacing: 1px;
+  font-family: "Open Sans", sans-serif;
+  background-color: #524535;
+  font-size: 23px;
+  text-transform: uppercase;
+  padding-left: 60px;
+  padding-top: 5px;
+}
+article {
+  border: 1px solid black;
+  background-color: #a89776;
+  padding: 14px;
+}
+
+.artikel:nth-child(2n + 1) {
+  background-color: #d1bc92;
+}
+
+.pris {
+  font-weight: bold;
+  padding-top: 5px;
+}
+
+.text {
+  color: white;
+}
+
+.valg {
+  background-color: gray;
+}
+
+article img {
+  width: 100%;
+  border-radius: 3%;
+}
+
 @media (min-width: 601px) {
-  .grid {
+  main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
   }
+}
+
+#popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #00000088;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+#popup article {
+  max-width: 40%;
+  background-color: #a89776;
+  color: white;
+}
+
+#popup article p {
+  letter-spacing: none;
+}
+
+#popup .artikel:nth-child(2n + 1) {
+  background-color: #d1bc92;
+}
+
+#popup #pris {
+  font-weight: bold;
+  padding-top: 5px;
+}
+
+footer {
+  background-color: #524535;
+  font-family: "Merriweather", serif;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
